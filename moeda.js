@@ -13,7 +13,7 @@ async function getExchangeRate(moeda1, moeda2) {
       throw new Error('Erro ao buscar a taxa de câmbio');
     }
   } catch (error) {
-    console.error("Error: ", error);
+    console.error("Erro: ", error);
     return null;
   }
 }
@@ -26,10 +26,10 @@ document.getElementById('currency-form').addEventListener('submit', async functi
   const moeda1 = document.getElementById('moeda1').value;
   const moeda2 = document.getElementById('moeda2').value;
 
-  const ExchangeRate = await getExchangeRate(moeda1, moeda2);
+  const exchangeRate = await getExchangeRate(moeda1, moeda2);
 
-  if (ExchangeRate) {
-    const convertedValue = valor * ExchangeRate;
+  if (exchangeRate) {
+    const convertedValue = valor * exchangeRate;
     const conversao = document.getElementById('conversao');
     conversao.textContent = `Resultado: ${convertedValue.toFixed(2)} ${moeda2}`;
   } else {
@@ -44,5 +44,4 @@ function clearResult() {
 }
 
 // Escutador de evento para o botão "Limpar"
-document.getElementById('clear-button').addEventListener('click', clearResult);
-
+document.getElementById('limpar').addEventListener('click', clearResult);

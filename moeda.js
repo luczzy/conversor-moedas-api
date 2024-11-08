@@ -37,3 +37,10 @@ document.getElementById('currency-form').addEventListener('submit', async functi
   }
 });
 
+// Função para limpar o campo de resultado e o campo de valor
+function clearResult() {
+  document.getElementById('conversao').textContent = '';
+  document.getElementById('valor').value = '';
+}
+
+

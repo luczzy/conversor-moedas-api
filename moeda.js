@@ -43,4 +43,6 @@ function clearResult() {
   document.getElementById('valor').value = '';
 }
 
+// Escutador de evento para o botão "Limpar"
+document.getElementById('clear-button').addEventListener('click', clearResult);
 

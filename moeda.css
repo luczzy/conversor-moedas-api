@@ -1,4 +1,5 @@
-/* Reset de estilo */
+/* moeda.css */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,150 +8,81 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f3f4f6;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
 }
 
-/* Animação de entrada para o contêiner */
-@keyframes fadeInUp {
-  0% {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Contêiner principal */
-.container {
+main {
   width: 100%;
   max-width: 400px;
-  background: #fff;
   padding: 20px;
-  border-radius: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  animation: fadeInUp 0.8s ease-out; /* Aplica animação de entrada */
 }
 
-/* Cabeçalho */
-.header h1 {
-  font-size: 1.8rem;
+h1 {
+  font-size: 24px;
   color: #333;
   margin-bottom: 20px;
 }
 
-/* Grupos de entradas e seleção */
-.input-group, .select-group, .button-group, .button-Reset {
-  margin: 10px 0;
+#currency-form {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.currency-input {
+.input-group {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.currency-input span {
-  font-size: 1.2rem;
-  margin-right: 5px;
+label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
 }
 
-.currency-input input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  transition: box-shadow 0.3s ease; /* Transição para o foco */
-}
-
-/* Animação ao focar em input e select */
-.currency-input input:focus,
-select:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  border-color: #007BFF;
-}
-
+input[type="number"],
 select {
   width: 100%;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 16px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f9f9f9;
-  transition: box-shadow 0.3s ease; /* Transição para o foco */
+  border-radius: 4px;
+  background-color: #f9f9f9;
 }
 
-/* Botões */
+input[type="number"]:focus,
+select:focus {
+  border-color: #5b9bd5;
+  outline: none;
+}
+
 button {
-  padding: 10px 20px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #5b9bd5;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-#convertButton {
-  background-color: #007BFF;
-  color: #fff;
+button:hover {
+  background-color: #41729f;
 }
 
-#convertButton:hover {
-  background-color: #0056b3;
-  transform: scale(1.05); /* Leve aumento no hover */
-}
-
-#ResetButton {
-  background-color: #ddd;
-  color: #333;
-}
-
-#ResetButton:hover {
-  background-color: #bbb;
-  transform: scale(1.05); /* Leve aumento no hover */
-}
-
-/* Resultado da conversão */
 #conversao {
   margin-top: 20px;
-  font-size: 1.2rem;
+  font-size: 18px;
   color: #333;
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 600px) {
-  .container {
-      padding: 15px;
-  }
-  
-  .header h1 {
-      font-size: 1.5rem;
-  }
-  
-  button, input, select {
-      font-size: 0.9rem;
-      padding: 8px;
-  }
-
-  /* Botões empilhados em telas menores */
-  .button-group, .button-Reset {
-      flex-direction: column;
-      width: 100%;
-  }
-
-  .button-group button, .button-Reset button {
-      width: 100%;
-      margin-bottom: 10px;
-  }
 }

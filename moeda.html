@@ -1,51 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Moedas</title>
-    <link rel="stylesheet" href="moeda.css">
-    <script src="moeda.js" defer></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Conversor de moeda</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='moeda.css'>
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Conversor de Moedas</h1>
-        </div>
-        <form id="currencyForm">
+    <main>
+        <h1>Conversor de Moeda</h1>
+        <form id="currency-form">
             <div class="input-group">
-                <div class="currency-input">
-                    <span id="currencySymbol">$</span>
-                    <input type="text" id="Tamanho" placeholder="Valor" required />
-                </div>
+                <label for="valor">valor:</label>
+                <input type="number" id="valor" name="valor" placeholder="Digite o valor">
             </div>
-            <p>De:</p>
-            <div class="select-group">
-                <select id="fromCurrency" onchange="updateCurrency()" required>
-                    <option value="USD">Dólar [USD]</option>
-                    <option value="EUR">Euro [EUR]</option>
-                    <option value="BRL">Real [BRL]</option>
+            <div class="input-group">
+                <label for="moeda1">De:</label>
+                <select id="moeda1" name="moeda1">
+                    <option value="USD">Dólar (USD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="BRL">Real (BRL)</option>
                 </select>
             </div>
-            <p>Para:</p>
-            <div class="select-group">
-                <select id="toCurrency">
-                    <option value="USD">Dólar [USD]</option>
-                    <option value="EUR">Euro [EUR]</option>
-                    <option value="BRL">Real [BRL]</option>
+            <div class="input-group">
+                <label for="moeda2">Para:</label>
+                <select id="moeda2" name="moeda2">
+                    <option value="USD">Dólar (USD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="BRL">Real (BRL)</option>
                 </select>
             </div>
-            <div class="button-group">
-                <button type="button" id="convertButton">Converter</button>
-            </div>
-            <div class="button-Reset">
-                <button type="reset" id="ResetButton">Reset</button>
-            </div>
+            <button type="submit">Converter</button>
+            <button type="submit">Limpar</button>
         </form>
+
         <div id="conversao"></div>
-    </div>
+
+        <script src='moeda.js'></script>
+
+    </main>
 </body>
 
 </html>
